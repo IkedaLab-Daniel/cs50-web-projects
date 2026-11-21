@@ -10,6 +10,12 @@
     <ul>
         {% for entry in entries %}
             <li><a href="wiki/{{ entry }}">{{ entry }}</a></li>
+        {% empty %}
+        {% if query %}
+            <h3>No entry for: {{ query }}</h3>
+        {% else %}
+            <h3>No entry.</h3>
+        {% endif %}
         {% endfor %}
     </ul>
 
