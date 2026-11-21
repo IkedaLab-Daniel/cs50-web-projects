@@ -10,4 +10,7 @@ def index(request):
     })
 
 def title(request, title):
-    return HttpResponse(f"Hello, {title}")
+    return render(request, "encyclopedia/wiki-entry.html", {
+        "entry": util.get_entry(title),
+        "title": title
+    })
