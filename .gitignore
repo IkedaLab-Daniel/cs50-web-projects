@@ -1,0 +1,5 @@
+db.sqlite3
+.DS_store
+venv
+__pycache__/
+*.py[cod]
