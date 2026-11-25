@@ -1,0 +1,28 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Add
+{% endblock %}
+
+{% block body %}
+    <h1>Add Entry</h1>
+
+    {% if error %}
+    <p style="
+        background-color: #FEF2F2;
+        border: 2px solid #FCA5A5;
+        color: #991B1B;
+        padding: 8px 12px;
+        border-radius: 8px;
+        display: inline-block;
+        margin: 8px;
+    ">
+    Error: {{ error }}</p>
+    {% endif %}
+
+    <form action="{% url 'encyclopedia:add' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Save">
+    </form>
+{% endblock %}
